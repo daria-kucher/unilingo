@@ -17,6 +17,18 @@ public class Exercise {
     @ElementCollection
     private List<String> wrongAnswers;
 
+    public List<ExerciseSubSkill> getExerciseSubSkills() {
+        return exerciseSubSkills;
+    }
+
+    public void setExerciseSubSkills(List<ExerciseSubSkill> exerciseSubSkills) {
+        this.exerciseSubSkills = exerciseSubSkills;
+    }
+
+    // 🔥 ВАЖЛИВО
+    @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL)
+    private List<ExerciseSubSkill> exerciseSubSkills;
+
     public Long getId() {
         return id;
     }
