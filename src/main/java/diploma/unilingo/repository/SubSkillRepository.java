@@ -1,7 +1,0 @@
-package diploma.unilingo.repository;
-
-import diploma.unilingo.entity.SubSkill;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface SubSkillRepository extends JpaRepository<SubSkill, Long> {
-}
