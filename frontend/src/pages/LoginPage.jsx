@@ -1,56 +1,81 @@
 import { useState } from "react";
-import { login } from "../services/authService";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function LoginPage() {
+export default function LoginPage() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
-    const [form, setForm] = useState({
-        username: "",
-        password: ""
-    });
-
-    const handleChange = (e) => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        });
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        try {
-            const res = await login(form);
-            console.log(res.data);
-
-            alert("Login success!");
-        } catch (err) {
-            console.error(err);
-            alert("Login failed");
+        if (!isValidEmail(email)) {
+            setError("Invalid email format");
+            return;
         }
+
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters");
+            return;
+        }
+
+        // Fake validation
+        if (email !== "test@example.com" || password !== "123456") {
+            setError("Incorrect email or password");
+            return;
+        }
+
+        setError("");
+        alert("Login successful!");
     };
 
+    const isFormValid = email && password;
+
     return (
-        <div>
-            <h2>Login</h2>
+        <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+            <div className="card shadow p-4" style={{ width: "350px", borderRadius: "15px" }}>
+                <h3 className="text-center mb-4">Login</h3>
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    name="username"
-                    placeholder="Username"
-                    onChange={handleChange}
-                />
+                {error && (
+                    <div className="alert alert-danger py-2">{error}</div>
+                )}
 
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                />
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label className="form-label">Email</label>
+                        <input
+                            type="email"
+                            className="form-control"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter email"
+                        />
+                    </div>
 
-                <button type="submit">Login</button>
-            </form>
+                    <div className="mb-3">
+                        <label className="form-label">Password</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Enter password"
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="btn btn-primary w-100"
+                        disabled={!isFormValid}
+                    >
+                        Sign In
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }
-
-export default LoginPage;
