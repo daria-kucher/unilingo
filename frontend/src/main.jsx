@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import {Header} from "./components/Header.jsx";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import {Footer} from "./components/Footer.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,5 +14,6 @@ createRoot(document.getElementById('root')).render(
       <Header />
       <LoginPage />
 
+      <Footer />
   </StrictMode>,
 )
