@@ -1,13 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import logoImg from "../assets/images/logo.jpg";
+import { Link } from "react-router-dom";
 
-export function Header({ isAuthenticated = false, onLogout }) {
+export function Header({isAuthenticated = false, onLogout}) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm px-3">
             <a className="navbar-brand d-flex align-items-center" href="#">
                 <img
-                    src="/unilingo.jpg"
+                    src={logoImg}
                     alt="UniLingo"
-                    style={{ width: "40px", height: "40px", objectFit: "cover", borderRadius: "8px", marginRight: "10px" }}
+                    className="logo-img"
+
                 />
                 <span className="fw-bold">UniLingo</span>
             </a>
@@ -69,12 +72,20 @@ export function Header({ isAuthenticated = false, onLogout }) {
                 <div className="d-flex gap-2">
                     {!isAuthenticated ? (
                         <>
-                            <button className="btn btn-outline-light custom-btn">Register</button>
-                            <button className="btn btn-light text-primary custom-btn">Log in</button>
+                            <Link to="/register" className="btn btn-outline-light custom-btn">
+                                Register
+                            </Link>
+
+                            <Link to="/login" className="btn btn-light text-primary custom-btn">
+                                Log in
+                            </Link>
                         </>
                     ) : (
-                        <button className="btn btn-danger custom-btn" onClick={onLogout}>Log out</button>
+                        <button className="btn btn-danger custom-btn" onClick={onLogout}>
+                            Log out
+                        </button>
                     )}
+
                 </div>
             </div>
 
@@ -120,6 +131,19 @@ export function Header({ isAuthenticated = false, onLogout }) {
 
         .custom-btn:active {
           transform: scale(0.97);
+        }
+        
+        .logo-img {
+          height: 60px;
+          width: auto;
+          object-fit: contain;
+          border-radius: 10px;
+          margin-right: 12px;
+          transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+          transform: scale(1.05);
         }
 
         /* Animation */
