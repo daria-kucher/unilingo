@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -23,7 +25,6 @@ export default function LoginPage() {
             return;
         }
 
-        // Fake validation
         if (email !== "test@example.com" || password !== "123456") {
             setError("Incorrect email or password");
             return;
@@ -36,46 +37,59 @@ export default function LoginPage() {
     const isFormValid = email && password;
 
     return (
-        <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-            <div className="card shadow p-4" style={{ width: "350px", borderRadius: "15px" }}>
-                <h3 className="text-center mb-4">Login</h3>
+        <div className="page-bg d-flex flex-column min-vh-100">
 
-                {error && (
-                    <div className="alert alert-danger py-2">{error}</div>
-                )}
+            <Header isAuthenticated={false} />
 
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label className="form-label">Email</label>
-                        <input
-                            type="email"
-                            className="form-control"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter email"
-                        />
-                    </div>
+            <div className="flex-grow-1 d-flex justify-content-center align-items-center">
+                <div className="card shadow p-4" style={{ width: "350px", borderRadius: "15px" }}>
+                    <h3 className="text-center mb-4">Login</h3>
 
-                    <div className="mb-3">
-                        <label className="form-label">Password</label>
-                        <input
-                            type="password"
-                            className="form-control"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Enter password"
-                        />
-                    </div>
+                    {error && (
+                        <div className="alert alert-danger py-2">{error}</div>
+                    )}
 
-                    <button
-                        type="submit"
-                        className="btn btn-primary w-100"
-                        disabled={!isFormValid}
-                    >
-                        Sign In
-                    </button>
-                </form>
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label className="form-label">Email</label>
+                            <input
+                                type="email"
+                                className="form-control"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter email"
+                            />
+                        </div>
+
+                        <div className="mb-3">
+                            <label className="form-label">Password</label>
+                            <input
+                                type="password"
+                                className="form-control"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Enter password"
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="btn btn-primary w-100"
+                            disabled={!isFormValid}
+                        >
+                            Sign In
+                        </button>
+                    </form>
+                </div>
             </div>
+
+            <Footer />
+
+            <style>{`
+        .page-bg {
+          background-color: #f7fcfc;
+        }
+      `}</style>
         </div>
     );
 }
