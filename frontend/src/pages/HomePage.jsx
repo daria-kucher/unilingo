@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import "../styles/HomePage.css"
+
 import {Header} from "../components/Header.jsx";
 import {Footer} from "../components/Footer.jsx";
 
@@ -176,109 +178,6 @@ export default function HomePage() {
                 </div>
             </section>
             <Footer />
-
-            <style>{`
-        .custom-btn {
-          border-radius: 20px;
-          transition: all 0.3s ease;
-        }
-
-        .custom-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .custom-btn:active {
-          transform: scale(0.97);
-        }
-        
-        .feature-gif {
-          width: 200px;
-          height: 200px;
-          object-fit: contain;
-          transition: transform 0.3s ease;
-        }
-
-        .feature-gif:hover {
-          transform: scale(1.1);
-        }
-        
-        .page-bg {
-          background-color: #f7fcfc;
-          min-height: 100vh;
-        }
-        
-        .hero-banner {
-          max-width: 250px;
-          width: 100%;
-          height: auto;
-          object-fit: contain;
-          transition: transform 0.3s ease;
-        }
-
-        .hero-banner:hover {
-          transform: scale(1.05);
-        }
-        
-        .highlight-img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 16px;
-          transition: all 0.3s ease;
-        }
-
-        .highlight-img:hover {
-          transform: scale(1.03);
-        }
-        
-        .testimonial-img {
-          width: 170px;
-          height: 170px;
-          object-fit: cover;
-          border-radius: 50%;
-          border: 3px solid #e7f1ff;
-          transition: transform 0.3s ease;
-        }
-
-        .testimonial-img:hover {
-          transform: scale(1.1);
-        }
-
-        .testimonial-card {
-          transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        }
-        
-        .awards-section {
-          background: linear-gradient(
-          to bottom,
-          #0d6efd 0%,     /* колір CTA */
-          #f7fcfc 100%   /* колір сторінки */
-          );
-        }
-
-        .award-img {
-          max-width: 150px;
-          width: 100%;
-          height: auto;
-          object-fit: contain;
-          opacity: 0.9;
-          transition: all 0.3s ease;
-        }
-
-        .award-img:hover {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-
-        section {
-          transition: all 0.3s ease;
-        }
-      `}</style>
         </div>
     );
 }

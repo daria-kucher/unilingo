@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../styles/Footer.css"
 
 export function Footer() {
     return (
@@ -54,30 +55,7 @@ export function Footer() {
                     © 2026 UniLingo. All rights reserved.
                 </div>
             </div>
-
-            <style>{`
-        footer {
-          transition: all 0.3s ease;
-        }
-
-        .footer-link {
-          color: #e7f1ff;
-          text-decoration: none;
-          font-size: 0.9rem;
-          display: inline-block;
-          margin: 4px 0;
-          transition: all 0.3s ease;
-        }
-
-        .footer-link:hover {
-          color: white;
-          transform: translateX(3px);
-        }
-
-        i {
-          font-size: 1rem;
-        }
-      `}</style>
+            
         </footer>
     );
 }
