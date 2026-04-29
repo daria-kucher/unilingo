@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoImg from "../assets/images/logo.jpg";
 import { Link } from "react-router-dom";
+import "../styles/Header.css"
 
 export function Header({isAuthenticated = false, onLogout}) {
     return (
@@ -88,76 +89,6 @@ export function Header({isAuthenticated = false, onLogout}) {
 
                 </div>
             </div>
-
-            <style>{`
-        .navbar .nav-link {
-          transition: all 0.3s ease;
-        }
-        .navbar .nav-link:hover {
-          color: #cfe2ff !important;
-        }
-
-        /* Dropdown styling */
-        .custom-dropdown {
-          border-radius: 12px;
-          padding: 6px;
-          min-width: 180px;
-          box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-          animation: fadeIn 0.2s ease;
-        }
-
-        .dropdown-item {
-          font-size: 0.9rem; /* smaller than nav text */
-          padding: 8px 12px;
-          border-radius: 8px;
-          transition: all 0.2s ease;
-        }
-
-        .dropdown-item:hover {
-          background-color: #e7f1ff;
-          transform: translateX(3px);
-        }
-
-        /* Buttons */
-        .custom-btn {
-          border-radius: 20px;
-          transition: all 0.3s ease;
-        }
-
-        .custom-btn:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-        }
-
-        .custom-btn:active {
-          transform: scale(0.97);
-        }
-        
-        .logo-img {
-          height: 60px;
-          width: auto;
-          object-fit: contain;
-          border-radius: 10px;
-          margin-right: 12px;
-          transition: transform 0.3s ease;
-        }
-
-        .logo-img:hover {
-          transform: scale(1.05);
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(5px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
         </nav>
     );
 }
