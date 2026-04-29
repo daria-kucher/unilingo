@@ -24,15 +24,13 @@ export default function HomePage() {
             <Header isAuthenticated={false} />
 
             {/* Hero Section */}
-            <section className="bg-primary text-light text-center py-5">
+            <section className="hero-section text-center py-5">
                 <div className="container">
-                    <img
-                        src={bannerImg}
-                        alt="banner"
-                        className="hero-banner mb-4"
-                    />
+                    <img src={bannerImg} alt="banner" className="hero-banner mb-4" />
                     <h1 className="fw-bold mb-3">Learn Languages the Smart Way</h1>
-                    <p className="lead mb-4">Interactive lessons, real progress, real results</p>
+                    <p className="lead mb-4">
+                        Interactive lessons, real progress, real results
+                    </p>
                     <button className="btn btn-light text-primary px-4 py-2 custom-btn">
                         Start Learning
                     </button>
@@ -63,7 +61,7 @@ export default function HomePage() {
             </section>
 
             {/* Highlight Section */}
-            <section className="bg-light py-5">
+            <section className="highlight-section py-5">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md-6 mb-4">
@@ -72,14 +70,12 @@ export default function HomePage() {
                                 UniLingo combines technology and proven methods to give you the
                                 best learning experience.
                             </p>
-                            <button className="btn btn-primary custom-btn">Explore Courses</button>
+                            <button className="btn btn-primary custom-btn">
+                                Explore Courses
+                            </button>
                         </div>
                         <div className="col-md-6">
-                            <img
-                                src={learnersImg}
-                                alt="learning"
-                                className="highlight-img"
-                            />
+                            <img src={learnersImg} alt="learning" className="highlight-img"/>
                         </div>
                     </div>
                 </div>
@@ -90,66 +86,24 @@ export default function HomePage() {
                 <div className="container">
                     <h2 className="fw-bold mb-4">What our students say</h2>
                     <div className="row">
-                        <div className="col-md-4 mb-3 d-flex">
-                            <div
-                                className="testimonial-card p-4 shadow rounded w-100 d-flex flex-column align-items-center text-center">
-
-                                <img
-                                    src={user1}
-                                    alt="Anna"
-                                    className="testimonial-img mb-3"
-                                />
-
-                                <p className="flex-grow-1 mb-3">
-                                    "Amazing platform! I improved my English in 3 months."
-                                </p>
-
-                                <small>- Anna</small>
-
+                        {[{img: user1, name: "Anna", text: "Amazing platform! I improved my English in 3 months."},
+                            {img: user2, name: "Oleh", text: "Very interactive and easy to use."},
+                            {img: user3, name: "Maria", text: "Best learning app I’ve tried so far."}
+                        ].map((item, i) => (
+                            <div key={i} className="col-md-4 mb-3 d-flex">
+                                <div className="testimonial-card p-4 shadow rounded w-100 d-flex flex-column align-items-center text-center">
+                                    <img src={item.img} alt={item.name} className="testimonial-img mb-3"/>
+                                    <p className="flex-grow-1 mb-3">"{item.text}"</p>
+                                    <small>- {item.name}</small>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-md-4 mb-3 d-flex">
-                            <div
-                                className="testimonial-card p-4 shadow rounded w-100 d-flex flex-column align-items-center text-center">
-
-                                <img
-                                    src={user2}
-                                    alt="Oleh"
-                                    className="testimonial-img mb-3"
-                                />
-
-                                <p className="flex-grow-1 mb-3">
-                                    "Very interactive and easy to use."
-                                </p>
-
-                                <small>- Oleh</small>
-
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-3 d-flex">
-                            <div
-                                className="testimonial-card p-4 shadow rounded w-100 d-flex flex-column align-items-center text-center">
-
-                                <img
-                                    src={user3}
-                                    alt="Maria"
-                                    className="testimonial-img mb-3"
-                                />
-
-                                <p className="flex-grow-1 mb-3">
-                                    "Best learning app I’ve tried so far."
-                                </p>
-
-                                <small>- Maria</small>
-                            </div>
-                        </div>
-
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="bg-primary text-light text-center py-5">
+            {/* CTA */}
+            <section className="cta-section text-center py-5">
                 <div className="container">
                     <h2 className="fw-bold mb-3">Start your journey today</h2>
                     <button className="btn btn-light text-primary custom-btn px-4 py-2">
@@ -157,26 +111,20 @@ export default function HomePage() {
                     </button>
                 </div>
             </section>
-            {/* Awards Section */}
+
+            {/* Awards */}
             <section className="awards-section text-center py-4">
                 <div className="container">
                     <div className="row justify-content-center align-items-center">
-
-                        <div className="col-4 col-md-2 mb-3">
-                            <img src={award1} alt="award" className="award-img" />
-                        </div>
-
-                        <div className="col-4 col-md-2 mb-3">
-                            <img src={award2} alt="award" className="award-img" />
-                        </div>
-
-                        <div className="col-4 col-md-2 mb-3">
-                            <img src={award3} alt="award" className="award-img" />
-                        </div>
-
+                        {[award1, award2, award3].map((img, i) => (
+                            <div key={i} className="col-4 col-md-2 mb-3">
+                                <img src={img} alt="award" className="award-img"/>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
+
             <Footer />
         </div>
     );

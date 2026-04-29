@@ -4,11 +4,10 @@ import "../styles/Footer.css"
 
 export function Footer() {
     return (
-        <footer className="bg-primary text-light mt-5 pt-4 pb-3">
+        <footer className="footer mt-5 pt-4 pb-3">
             <div className="container">
                 <div className="row text-start">
 
-                    {/* Column 1 */}
                     <div className="col-md-4 mb-3">
                         <h6 className="fw-bold">For students</h6>
                         <ul className="list-unstyled">
@@ -18,7 +17,6 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 2 */}
                     <div className="col-md-4 mb-3">
                         <h6 className="fw-bold">About us</h6>
                         <ul className="list-unstyled">
@@ -30,7 +28,6 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 3 */}
                     <div className="col-md-4 mb-3">
                         <h6 className="fw-bold">Social</h6>
                         <ul className="list-unstyled">
@@ -55,7 +52,6 @@ export function Footer() {
                     © 2026 UniLingo. All rights reserved.
                 </div>
             </div>
-            
         </footer>
     );
 }
