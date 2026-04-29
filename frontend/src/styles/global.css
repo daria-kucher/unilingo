@@ -1,0 +1,24 @@
+:root {
+    --bg: #f7fcfc;
+    --text: #043873;
+    --card: #ffffff;
+}
+
+/* DARK */
+[data-theme="dark"] {
+    --bg: #0b1a2b;
+    --text: #e6f0ff;
+    --card: #13263f;
+}
+
+/* APPLY */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* плавність для всього */
+* {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}

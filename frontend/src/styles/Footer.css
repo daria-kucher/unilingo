@@ -1,4 +1,7 @@
-footer {
+/* LIGHT MODE */
+.footer {
+    background-color: #0d6efd;
+    color: white;
     transition: all 0.3s ease;
 }
 
@@ -16,6 +19,21 @@ footer {
     transform: translateX(3px);
 }
 
+/* DARK MODE */
+[data-theme="dark"] .footer {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .footer-link {
+    color: #cfe2ff;
+}
+
+[data-theme="dark"] .footer-link:hover {
+    color: white;
+}
+
+/* icons */
 i {
     font-size: 1rem;
 }

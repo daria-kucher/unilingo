@@ -1,9 +1,44 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoImg from "../assets/images/logo.jpg";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css"
 
 export function Header({isAuthenticated = false, onLogout}) {
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme) {
+            const isDark = savedTheme === "dark";
+            setDarkMode(isDark);
+            document.documentElement.setAttribute(
+                "data-theme",
+                isDark ? "dark" : "light"
+            );
+        } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            setDarkMode(prefersDark);
+            document.documentElement.setAttribute(
+                "data-theme",
+                prefersDark ? "dark" : "light"
+            );
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = !darkMode;
+        setDarkMode(newTheme);
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            newTheme ? "dark" : "light"
+        );
+
+        localStorage.setItem("theme", newTheme ? "dark" : "light");
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm px-3">
             <a className="navbar-brand d-flex align-items-center" href="#">
@@ -71,6 +106,19 @@ export function Header({isAuthenticated = false, onLogout}) {
                 </ul>
 
                 <div className="d-flex gap-2">
+                    <div className="theme-switch">
+                        <input
+                            type="checkbox"
+                            id="theme-toggle"
+                            checked={darkMode}
+                            onChange={toggleTheme}
+                        />
+                        <label htmlFor="theme-toggle" className="switch-label">
+                            <span className="icon sun">☀️</span>
+                            <span className="icon moon">🌙</span>
+                            <span className="ball"></span>
+                        </label>
+                    </div>
                     {!isAuthenticated ? (
                         <>
                             <Link to="/register" className="btn btn-outline-light custom-btn">
@@ -86,7 +134,6 @@ export function Header({isAuthenticated = false, onLogout}) {
                             Log out
                         </button>
                     )}
-
                 </div>
             </div>
         </nav>

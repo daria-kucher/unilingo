@@ -12,6 +12,7 @@
     transform: scale(0.97);
 }
 
+/* GIF */
 .feature-gif {
     width: 200px;
     height: 200px;
@@ -23,11 +24,29 @@
     transform: scale(1.1);
 }
 
+/* PAGE */
 .page-bg {
     background-color: #f7fcfc;
     min-height: 100vh;
+    transition: all 0.3s ease;
 }
 
+[data-theme="dark"] .page-bg {
+    background-color: #0b1a2b;
+}
+
+/* HERO */
+.hero-section {
+    background-color: #0d6efd;
+    color: white;
+}
+
+[data-theme="dark"] .hero-section {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
+
+/* HERO IMAGE */
 .hero-banner {
     max-width: 250px;
     width: 100%;
@@ -38,6 +57,15 @@
 
 .hero-banner:hover {
     transform: scale(1.05);
+}
+
+/* HIGHLIGHT */
+.highlight-section {
+    background-color: #f8f9fa;
+}
+
+[data-theme="dark"] .highlight-section {
+    background-color: #13263f;
 }
 
 .highlight-img {
@@ -51,6 +79,7 @@
     transform: scale(1.03);
 }
 
+/* TESTIMONIAL */
 .testimonial-img {
     width: 170px;
     height: 170px;
@@ -65,7 +94,13 @@
 }
 
 .testimonial-card {
+    background-color: white;
     transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .testimonial-card {
+    background-color: #13263f;
+    color: #e6f0ff;
 }
 
 .testimonial-card:hover {
@@ -73,11 +108,31 @@
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
+/* CTA */
+.cta-section {
+    background-color: #0d6efd;
+    color: white;
+}
+
+[data-theme="dark"] .cta-section {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
+
+/* AWARDS */
 .awards-section {
     background: linear-gradient(
             to bottom,
-            #0d6efd 0%,     /* колір CTA */
-            #f7fcfc 100%   /* колір сторінки */
+            #0d6efd 0%,
+            #f7fcfc 100%
+    );
+}
+
+[data-theme="dark"] .awards-section {
+    background: linear-gradient(
+            to bottom,
+            #0b1a2b 0%,
+            #13263f 100%
     );
 }
 
@@ -95,6 +150,23 @@
     transform: scale(1.1);
 }
 
+/* BUTTON FIX FOR DARK */
+[data-theme="dark"] .btn-light {
+    background-color: #e6f0ff;
+    color: #0b1a2b;
+}
+
+[data-theme="dark"] .btn-primary {
+    background-color: #1f3a5f;
+    border: none;
+}
+
+/* GENERAL */
 section {
     transition: all 0.3s ease;
 }
+
+[data-theme="dark"] section {
+    color: #e6f0ff;
+}
+

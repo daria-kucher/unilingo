@@ -1,3 +1,4 @@
+/* Navigation bar */
 .navbar .nav-link {
     transition: all 0.3s ease;
 }
@@ -41,6 +42,7 @@
     transform: scale(0.97);
 }
 
+/* Logo */
 .logo-img {
     height: 60px;
     width: auto;
@@ -64,4 +66,115 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* DARK NAVBAR */
+[data-theme="dark"] .navbar {
+    background-color: #0b1a2b !important;
+}
+
+[data-theme="dark"] .nav-link {
+    color: #e6f0ff !important;
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: #13263f;
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: #1f3a5f;
+}
+
+/* SWITCH CONTAINER */
+.theme-switch {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide checkbox */
+.theme-switch input {
+    display: none;
+}
+
+/* Track */
+.switch-label {
+    width: 55px;
+    height: 28px;
+    background: #ddd;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    transition: background 0.3s ease;
+}
+
+/* Ball */
+.switch-label .ball {
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+/* Icons */
+.switch-label .icon {
+    font-size: 12px;
+    z-index: 2;
+}
+
+.sun {
+    margin-left: auto;
+}
+
+.moon {
+    margin-right: auto;
+}
+
+/* ACTIVE */
+.theme-switch input:checked + .switch-label {
+    background: #0b1a2b;
+}
+
+.theme-switch input:checked + .switch-label .ball {
+    transform: translateX(27px);
+}
+
+/* icons base */
+.switch-label .icon {
+    position: absolute;
+    font-size: 12px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Positions */
+.switch-label .sun {
+    right: 6px;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.switch-label .moon {
+    left: 6px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* When dark mode on */
+.theme-switch input:checked + .switch-label .sun {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.theme-switch input:checked + .switch-label .moon {
+    opacity: 0;
+    transform: scale(0.8);
 }
