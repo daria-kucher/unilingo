@@ -13,9 +13,7 @@ import BenefitsPage from "./pages/BenefitsPage"
 import EducationalPrinciples from "./pages/EducationalPrinciples"
 // @ts-ignore
 import ProficiencyTestPage from "./pages/ProficiencyTestPage"
-// @ts-ignore
 import ContactUsPage from "./pages/ContactUsPage"
-// @ts-ignore
 import FAQPage from "./pages/FAQPage"
 
 
