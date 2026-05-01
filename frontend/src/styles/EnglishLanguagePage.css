@@ -1,0 +1,74 @@
+/* LONGREAD */
+.longread-img {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;   /* центрує */
+    display: block;
+}
+
+.longread-img:hover {
+    transform: scale(1.03);
+}
+
+/* FACTS CARDS */
+.fact-card {
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.fact-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* DARK MODE FIX */
+[data-theme="dark"] .fact-card {
+    background-color: #13263f;
+    color: #e6f0ff;
+}
+
+/* CTA */
+.smooth-transition {
+    background: linear-gradient(
+            to bottom,
+            #0d6efd 0%,
+            #f7fcfc 100%
+    );
+}
+
+/* DARK MODE */
+[data-theme="dark"] .smooth-transition {
+    background: linear-gradient(
+            to bottom,
+            #0b1a2b 0%,
+            #0b1a2b 100%
+    );
+}
+
+/* FADE-IN ON SCROLL */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FACTS SECTION */
+.facts-section {
+    background-color: #f8f9fa;
+}
+
+[data-theme="dark"] .facts-section {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
