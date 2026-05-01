@@ -1,8 +1,7 @@
-
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import studentImg from "../assets/images/general-course/girl-studying.svg"
-import courseImg from "../assets/images/award1.webp"
+import "../styles/GeneralCoursePage.css"
 import { Link } from "react-router-dom";
 
 export default function GeneralCoursePage() {
