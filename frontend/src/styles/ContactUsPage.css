@@ -1,0 +1,45 @@
+/* CONTACT PAGE */
+.contact-section {
+    transition: all 0.3s ease;
+}
+
+.contact-form-wrapper {
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* SOCIAL */
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-item:hover {
+    transform: translateX(5px);
+    color: #0d6efd;
+}
+
+/* DARK MODE */
+[data-theme="dark"] .contact-section {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .contact-form-wrapper {
+    background-color: #13263f;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background-color: #1f3a5f;
+    color: #e6f0ff;
+    border: 1px solid #2c4d73;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #cfe2ff;
+}
