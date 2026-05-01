@@ -16,6 +16,7 @@ import user3 from "../assets/images/user3.jpg";
 import award1 from "../assets/images/award1.webp";
 import award2 from "../assets/images/award2.webp";
 import award3 from "../assets/images/award3.png";
+import {Link} from "react-router-dom";
 
 
 export default function HomePage() {
@@ -31,9 +32,9 @@ export default function HomePage() {
                     <p className="lead mb-4">
                         Interactive lessons, real progress, real results
                     </p>
-                    <button className="btn btn-light text-primary px-4 py-2 custom-btn">
+                    <Link to="/register" className="btn btn-light text-primary px-4 py-2 custom-btn">
                         Start Learning
-                    </button>
+                    </Link>
                 </div>
             </section>
 
@@ -70,9 +71,9 @@ export default function HomePage() {
                                 UniLingo combines technology and proven methods to give you the
                                 best learning experience.
                             </p>
-                            <button className="btn btn-primary custom-btn">
+                            <Link to="/languages-english" className="btn btn-primary custom-btn">
                                 Explore Courses
-                            </button>
+                            </Link>
                         </div>
                         <div className="col-md-6">
                             <img src={learnersImg} alt="learning" className="highlight-img"/>
@@ -106,9 +107,9 @@ export default function HomePage() {
             <section className="cta-section text-center py-5">
                 <div className="container">
                     <h2 className="fw-bold mb-3">Start your journey today</h2>
-                    <button className="btn btn-light text-primary custom-btn px-4 py-2">
+                    <Link to="/register" className="btn btn-light text-primary custom-btn px-4 py-2">
                         Join UniLingo
-                    </button>
+                    </Link>
                 </div>
             </section>
 
