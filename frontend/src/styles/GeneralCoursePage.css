@@ -1,0 +1,26 @@
+/* COURSE PAGE */
+.course-section {
+    transition: all 0.3s ease;
+}
+
+.course-img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.course-img:hover {
+    transform: scale(1.03);
+}
+
+/* DARK MODE */
+[data-theme="dark"] .course-section {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .course-section p {
+    color: #cfe2ff;
+}
