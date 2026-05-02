@@ -1,0 +1,301 @@
+/* TABLE */
+/* SECTION BACKGROUND */
+.comparison-section {
+    background: linear-gradient(135deg, #eef5ff, #f7fcfc);
+}
+
+/* TABLE */
+.custom-table {
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.custom-table thead {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.custom-table th {
+    padding: 15px;
+    font-weight: 600;
+}
+
+/* ROWS */
+.custom-table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* FEATURE COLUMN */
+.feature-name {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* ICONS */
+.table-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.table-icon:hover {
+    transform: scale(1.2);
+}
+
+/* ROW HOVER */
+.custom-table tbody tr:hover {
+    background-color: #f1f6ff;
+}
+
+/* DARK MODE */
+[data-theme="dark"] .comparison-section {
+    background: linear-gradient(135deg, #0b1a2b, #13263f);
+}
+
+[data-theme="dark"] .custom-table {
+    background: #13263f;
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .custom-table thead {
+    background-color: #1f3a5f;
+}
+
+[data-theme="dark"] .custom-table tbody tr:hover {
+    background-color: #1a2f4d;
+}
+
+/* CTA SECTION */
+.cta-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0d6efd, #4dabf7);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle glow effect */
+.cta-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+    filter: blur(80px);
+}
+
+/* TITLE */
+.cta-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* BUTTON */
+.cta-btn {
+    background: white;
+    color: #0d6efd;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* hover */
+.cta-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* active */
+.cta-btn:active {
+    transform: scale(0.97);
+}
+
+/* DARK MODE */
+[data-theme="dark"] .cta-section {
+    background: linear-gradient(135deg, #13263f, #1f3a5f);
+}
+
+[data-theme="dark"] .cta-btn {
+    background: #e6f0ff;
+    color: #0b1a2b;
+}
+
+/* CARDS */
+/* SECTION */
+.vs-section {
+    padding: 80px 0;
+}
+
+/* TITLE */
+.vs-title {
+    font-size: 2.2rem;
+    margin-bottom: 60px; /* більше відступу */
+}
+
+/* CARD BASE */
+.vs-card {
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* GOOD CARD */
+.vs-card-good {
+    background: linear-gradient(135deg, #e7f1ff, #ffffff);
+}
+
+/* BAD CARD */
+.vs-card-bad {
+    background: linear-gradient(135deg, #fff0f0, #ffffff);
+}
+
+/* HOVER */
+.vs-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* LIST */
+.vs-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+/* ICON */
+.vs-list img {
+    width: 20px;
+    height: 20px;
+}
+
+/* DARK MODE */
+[data-theme="dark"] .vs-card-good {
+    background: #13263f;
+}
+
+[data-theme="dark"] .vs-card-bad {
+    background: #2b1a1a;
+}
+
+[data-theme="dark"] .vs-section {
+    color: #e6f0ff;
+}
+
+/* CAROUSEL */
+/* ===== TESTIMONIAL ===== */
+
+.testimonial-title {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+}
+
+/* WRAPPER */
+.carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CAROUSEL */
+.testimonial-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+
+    width: 100%;
+    mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+    );
+}
+
+
+/* CARD */
+.testimonial-card-new {
+    min-width: 260px;
+    max-width: 260px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card-new:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.student-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CONTROLS UNDER */
+.carousel-controls {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+/* BUTTON */
+.carousel-btn {
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.85);
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ICON */
+.carousel-btn img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.carousel-btn:hover img {
+    transform: scale(1.15);
+}
+
+/* DARK MODE */
+[data-theme="dark"] .testimonial-card-new {
+    background: #13263f;
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .carousel-btn {
+    background: rgba(31,58,95,0.85);
+}

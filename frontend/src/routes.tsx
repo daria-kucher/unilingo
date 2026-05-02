@@ -4,10 +4,8 @@ import LoginPage from "./pages/LoginPage"
 import RegisterPage from "./pages/RegisterPage"
 import EnglishLanguagePage from "./pages/EnglishLanguagePage"
 import GeneralCoursePage from "./pages/GeneralCoursePage"
-// @ts-ignore
 import ForTeachersPage from "./pages/ForTeachersPage"
 import WhoWeArePage from "./pages/WhoWeArePage"
-// @ts-ignore
 import BenefitsPage from "./pages/BenefitsPage"
 // @ts-ignore
 import EducationalPrinciples from "./pages/EducationalPrinciples"
