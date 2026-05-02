@@ -27,7 +27,6 @@ export function Footer() {
                             <li><Link to="/who-we-are" className="footer-link">Who we are</Link></li>
                             <li><Link to="/contact-us" className="footer-link">Contact Us</Link></li>
                             <li><Link to="/faq" className="footer-link">FAQ</Link></li>
-                            <li><Link to="/" className="footer-link">Site Map</Link></li>
                             <li><Link to="/educational-principles" className="footer-link">Educational Council</Link>
                             </li>
                         </ul>
