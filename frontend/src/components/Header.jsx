@@ -97,7 +97,7 @@ export function Header({isAuthenticated = false, onLogout}) {
                             Why UniLingo
                         </a>
                         <ul className="dropdown-menu custom-dropdown">
-                            <li><Link className="dropdown-item" to="/who-we-are">Who are we</Link></li>
+                            <li><Link className="dropdown-item" to="/who-we-are">Who We Are</Link></li>
                             <li><Link className="dropdown-item" to="/benefits">Benefits</Link></li>
                             <li><Link className="dropdown-item" to="/educational-principles">Educational principles</Link></li>
                         </ul>
