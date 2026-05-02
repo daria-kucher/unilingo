@@ -1,0 +1,105 @@
+/* PAGE BACKGROUND */
+.page-bg {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* LONGREAD IMAGE */
+.longread-img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.longread-img:hover {
+    transform: scale(1.05);
+}
+
+/* TEXT (LONGREAD) */
+section p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+section h2 {
+    font-size: 2.2rem;
+}
+
+section h3 {
+    font-size: 1.6rem;
+}
+
+/* INSTRUCTION LIST */
+.instruction-list {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    line-height: 1.8;
+
+    text-align: center;
+    list-style-position: inside;
+}
+
+.instruction-list li {
+    margin-bottom: 14px;
+    transition: transform 0.3s ease;
+}
+
+.instruction-list li:hover {
+    transform: translateX(6px);
+}
+
+/* FADE-IN */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* CTA */
+.cta-section {
+    background: #0d6efd;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+}
+
+/* DARK MODE */
+[data-theme="dark"] .page-bg {
+    background-color: #0b1a2b;
+}
+
+[data-theme="dark"] section p {
+    color: #cfe2ff;
+}
+
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .instruction-section {
+    background-color: #0b1a2b;
+    color: #e6f0ff;
+}
+
+[data-theme="dark"] .cta-section {
+    background-color: #13263f;
+}
+
+[data-theme="dark"] .footer-transition {
+    background: linear-gradient(
+            to bottom,
+            #13263f 0%,
+            #0b1a2b 100%
+    );
+}

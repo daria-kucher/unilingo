@@ -1,5 +1,5 @@
 :root {
-    --bg: #f7fcfc;
+    --bg: #fff;
     --text: #043873;
     --card: #ffffff;
 }
@@ -18,7 +18,6 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* плавність для всього */
 * {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
