@@ -1,0 +1,10 @@
+/* HERO */
+.hero-section {
+    background: #f7fcfc;
+}
+
+/* DARK MODE HERO */
+[data-theme="dark"] .hero-section {
+    background: #0b1a2b;
+    color: #e6f0ff;
+}
