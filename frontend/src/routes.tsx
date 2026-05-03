@@ -7,7 +7,6 @@ import GeneralCoursePage from "./pages/GeneralCoursePage"
 import ForTeachersPage from "./pages/ForTeachersPage"
 import WhoWeArePage from "./pages/WhoWeArePage"
 import BenefitsPage from "./pages/BenefitsPage"
-// @ts-ignore
 import EducationalPrinciples from "./pages/EducationalPrinciples"
 // @ts-ignore
 import ProficiencyTestPage from "./pages/ProficiencyTestPage"
