@@ -5,7 +5,6 @@ import diploma.unilingo.entity.User;
 import diploma.unilingo.entity.UserSubSkill;
 import diploma.unilingo.repository.UserRepository;
 import diploma.unilingo.repository.UserSubSkillRepository;
-import diploma.unilingo.service.SkillService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
