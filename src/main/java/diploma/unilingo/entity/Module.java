@@ -17,8 +17,6 @@ public class Module {
     @ManyToOne
     private Course course;
 
-    @ManyToMany
-    private List<Skill> skills;
 
     private boolean completed;
 
@@ -52,14 +50,6 @@ public class Module {
 
     public void setCourse(Course course) {
         this.course = course;
-    }
-
-    public List<Skill> getSkills() {
-        return skills;
-    }
-
-    public void setSkills(List<Skill> skills) {
-        this.skills = skills;
     }
 
     public boolean isCompleted() {
