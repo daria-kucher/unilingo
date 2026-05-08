@@ -6,8 +6,9 @@ import diploma.unilingo.entity.Course;
 import java.util.List;
 
 public interface CourseService {
-    Course createCourse(CourseDTO dto);
-    Course updateCourse(Long id, CourseDTO dto);
-    Course getCourse(Long id);
-    List<Course> getAllCourses();
+    CourseDTO createCourse(CourseDTO dto);
+    CourseDTO updateCourse(Long id, CourseDTO request);
+    void deleteCourse(Long id);
+    CourseDTO getCourse(Long id);
+    List<CourseDTO> getAllCourses();
 }

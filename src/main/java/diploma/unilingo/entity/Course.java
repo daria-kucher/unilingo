@@ -3,14 +3,15 @@ package diploma.unilingo.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "course")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name = "course", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
