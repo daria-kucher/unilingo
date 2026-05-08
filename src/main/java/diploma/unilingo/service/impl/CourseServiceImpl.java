@@ -1,8 +1,8 @@
 package diploma.unilingo.service.impl;
 
 import diploma.unilingo.dto.CourseDTO;
-import diploma.unilingo.exception.CourseNotFoundException;
-import diploma.unilingo.exception.DuplicateCourseException;
+import diploma.unilingo.exception.course.CourseNotFoundException;
+import diploma.unilingo.exception.course.DuplicateCourseException;
 import diploma.unilingo.mapper.CourseMapper;
 import diploma.unilingo.repository.CourseRepository;
 import diploma.unilingo.service.CourseService;

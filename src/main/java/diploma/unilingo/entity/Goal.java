@@ -1,49 +1,34 @@
 package diploma.unilingo.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
 
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name = "goal")
 public class Goal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    private String description; // "Reach A2"
-    private int durationMonths; // 1, 3, 6, 12
+    @NonNull
+    @NotBlank(message = "Description is required")
+    @Size(max = 500, message = "Description must be less than 500 characters")
+    @Column(name = "description")
+    private String description;
 
-    @OneToOne
-    private User user;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getDurationMonths() {
-        return durationMonths;
-    }
-
-    public void setDurationMonths(int durationMonths) {
-        this.durationMonths = durationMonths;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    @Min(value = 1, message = "Duration must be at least 1 month")
+    @Max(value = 12, message = "Duration must be no more than 12 months")
+    @Column(name = "duration_months")
+    private int durationMonths;
 }

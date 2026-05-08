@@ -4,6 +4,8 @@ import diploma.unilingo.dto.GoalDTO;
 import diploma.unilingo.entity.Goal;
 import diploma.unilingo.entity.User;
 import diploma.unilingo.entity.UserSubSkill;
+import diploma.unilingo.exception.goal.GoalNotFoundException;
+import diploma.unilingo.mapper.GoalMapper;
 import diploma.unilingo.repository.GoalRepository;
 import diploma.unilingo.repository.UserRepository;
 import diploma.unilingo.repository.UserSubSkillRepository;
@@ -15,51 +17,25 @@ import java.util.List;
 @Service
 public class GoalServiceImpl implements GoalService {
     private final GoalRepository goalRepository;
-    private final UserRepository userRepository;
-    private final UserSubSkillRepository userSubSkillRepository;
+    private final GoalMapper goalMapper;
 
-    public GoalServiceImpl(GoalRepository goalRepository,
-                           UserRepository userRepository,
-                           UserSubSkillRepository userSubSkillRepository) {
+    public GoalServiceImpl(GoalRepository goalRepository, GoalMapper goalMapper) {
         this.goalRepository = goalRepository;
-        this.userRepository = userRepository;
-        this.userSubSkillRepository = userSubSkillRepository;
+        this.goalMapper = goalMapper;
     }
 
     @Override
-    public Goal createOrUpdateGoal(Long userId, GoalDTO dto) {
+    public GoalDTO createGoal(GoalDTO request) {
+        var goal = goalMapper.toEntity(request);
+        goalRepository.save(goal);
 
-        User user = userRepository.findById(userId)
-                .orElseThrow();
-
-        Goal goal = goalRepository.findByUser(user)
-                .orElse(new Goal());
-
-        goal.setUser(user);
-        goal.setDescription(dto.getDescription());
-        goal.setDurationMonths(dto.getDurationMonths());
-
-        return goalRepository.save(goal);
+        return goalMapper.toDto(goal);
     }
 
     @Override
-    public Goal getUserGoal(Long userId) {
-        User user = userRepository.findById(userId).orElseThrow();
-        return goalRepository.findByUser(user).orElseThrow();
-    }
+    public GoalDTO getGoal(Long id) {
+        var goal = goalRepository.findById(id).orElseThrow(GoalNotFoundException::new);
 
-    @Override
-    public double calculateProgress(Long userId) {
-
-        User user = userRepository.findById(userId).orElseThrow();
-
-        List<UserSubSkill> skills = userSubSkillRepository.findByUser(user);
-
-        double avg = skills.stream()
-                .mapToDouble(UserSubSkill::getpKnowledge)
-                .average()
-                .orElse(0);
-
-        return avg; // 0..1
+        return goalMapper.toDto(goal);
     }
 }
