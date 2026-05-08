@@ -36,15 +36,13 @@ class CourseServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        course = new Course(); // Set fields as needed
+        course = new Course();
         course.setId(1L);
         course.setName("Java Basics");
 
         courseDTO = new CourseDTO();
         courseDTO.setName("Java Basics");
     }
-
-    // --- createCourse Tests ---
 
     @Test
     void createCourse_Success() {
@@ -66,8 +64,6 @@ class CourseServiceImplTest {
         verify(courseRepository, never()).save(any());
     }
 
-    // --- updateCourse Tests ---
-
     @Test
     void updateCourse_Success() {
         Long id = 1L;
@@ -80,8 +76,6 @@ class CourseServiceImplTest {
         verify(courseRepository).save(course);
         assertNotNull(result);
     }
-
-    // --- deleteCourse Tests ---
 
     @Test
     void deleteCourse_Success() {
@@ -101,8 +95,6 @@ class CourseServiceImplTest {
         assertThrows(CourseNotFoundException.class, () -> courseService.deleteCourse(id));
     }
 
-    // --- getCourse Tests ---
-
     @Test
     void getCourse_Success() {
         Long id = 1L;
@@ -113,8 +105,6 @@ class CourseServiceImplTest {
 
         assertEquals(courseDTO.getName(), result.getName());
     }
-
-    // --- getAllCourses Tests ---
 
     @Test
     void getAllCourses_ReturnsList() {
