@@ -1,4 +1,4 @@
-package diploma.unilingo.entity;
+package diploma.unilingo.entity.enums;
 
 public enum TestType {
     ENTRY,

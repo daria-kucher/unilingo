@@ -7,7 +7,6 @@ import diploma.unilingo.entity.UserSubSkill;
 import diploma.unilingo.repository.UserRepository;
 import diploma.unilingo.repository.UserSubSkillRepository;
 import diploma.unilingo.service.ProgressService;
-import diploma.unilingo.service.SkillService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

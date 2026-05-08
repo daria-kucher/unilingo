@@ -1,5 +1,6 @@
 package diploma.unilingo.entity;
 
+import diploma.unilingo.entity.enums.Skill;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,7 +11,6 @@ public class SubSkill {
 
     private String name;
 
-    @ManyToOne
     private Skill skill;
 
     public Long getId() {

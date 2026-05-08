@@ -1,5 +1,6 @@
 package diploma.unilingo.entity;
 
+import diploma.unilingo.entity.enums.TestType;
 import jakarta.persistence.*;
 
 @Entity
