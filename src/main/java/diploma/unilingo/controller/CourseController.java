@@ -18,7 +18,6 @@ import java.util.List;
 public class CourseController {
 
     private CourseServiceImpl courseService;
-    private CourseRepository courseRepository;
 
     @GetMapping
     public List<CourseDTO> getAllCourses() {

@@ -4,9 +4,7 @@ import diploma.unilingo.dto.GoalDTO;
 import diploma.unilingo.entity.Goal;
 
 public interface GoalService {
-    Goal createOrUpdateGoal(Long userId, GoalDTO dto);
+    GoalDTO createGoal(GoalDTO request);
 
-    Goal getUserGoal(Long userId);
-
-    double calculateProgress(Long userId);
+    GoalDTO getGoal(Long id);
 }

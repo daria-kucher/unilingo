@@ -31,8 +31,4 @@ public class Goal {
     @Max(value = 12, message = "Duration must be no more than 12 months")
     @Column(name = "duration_months")
     private int durationMonths;
-
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 }
