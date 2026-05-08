@@ -1,13 +1,11 @@
 package diploma.unilingo.service.impl;
 
 import diploma.unilingo.dto.CourseDTO;
-import diploma.unilingo.entity.Course;
 import diploma.unilingo.exception.CourseNotFoundException;
 import diploma.unilingo.exception.DuplicateCourseException;
 import diploma.unilingo.mapper.CourseMapper;
 import diploma.unilingo.repository.CourseRepository;
 import diploma.unilingo.service.CourseService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
