@@ -31,5 +31,5 @@ public class LanguageLevel {
     @Min(value = 0, message = "Threshold cannot be less than 0")
     @Max(value = 6000, message = "Threshold cannot be greater than 6000")
     @Column(name = "threshold")
-    private double threshold;
+    private int threshold;
 }
