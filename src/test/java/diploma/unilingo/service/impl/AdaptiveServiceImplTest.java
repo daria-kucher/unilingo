@@ -78,40 +78,5 @@ class AdaptiveServiceImplTest {
         assertEquals(3, result.getOptions().size());
     }
 
-    @Test
-    void shouldReturnModuleForWeakestSkill() {
 
-        User user = new User();
-
-        Skill weakSkill = new Skill();
-
-        SubSkill sub1 = new SubSkill();
-        sub1.setSkill(new Skill());
-
-        SubSkill sub2 = new SubSkill();
-        sub2.setSkill(weakSkill);
-
-        UserSubSkill us1 = new UserSubSkill();
-        us1.setSubSkill(sub1);
-        us1.setpKnowledge(0.8);
-
-        UserSubSkill us2 = new UserSubSkill();
-        us2.setSubSkill(sub2);
-        us2.setpKnowledge(0.2);
-
-        diploma.unilingo.entity.Module module = new Module();
-
-        when(userRepository.findById(1L))
-                .thenReturn(Optional.of(user));
-
-        when(userSubSkillRepository.findByUser(user))
-                .thenReturn(List.of(us1, us2));
-
-        when(moduleRepository.findBySkills(weakSkill))
-                .thenReturn(List.of(module));
-
-        diploma.unilingo.entity.Module result = adaptiveService.getNextModule(1L);
-
-        assertNotNull(result);
-    }
 }

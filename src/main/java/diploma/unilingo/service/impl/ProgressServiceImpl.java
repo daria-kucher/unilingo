@@ -17,14 +17,13 @@ import java.util.List;
 public class ProgressServiceImpl implements ProgressService {
     private final UserRepository userRepository;
     private final UserSubSkillRepository userSubSkillRepository;
-    private final SkillService skillService;
 
     public ProgressServiceImpl(UserRepository userRepository,
-                               UserSubSkillRepository userSubSkillRepository,
-                               SkillService skillService) {
+                               UserSubSkillRepository userSubSkillRepository
+                            ) {
         this.userRepository = userRepository;
         this.userSubSkillRepository = userSubSkillRepository;
-        this.skillService = skillService;
+
     }
 
     @Override
@@ -45,13 +44,11 @@ public class ProgressServiceImpl implements ProgressService {
                 .mapToDouble(UserSubSkill::getWeeklyScore)
                 .sum();
 
-        List<SkillProgressDTO> skills =
-                skillService.getUserSkillProgress(userId);
+
 
         ProgressDTO dto = new ProgressDTO();
         dto.setOverallProgress(overall);
         dto.setWeeklyProgress(weekly);
-        dto.setSkills(skills);
 
         return dto;
     }

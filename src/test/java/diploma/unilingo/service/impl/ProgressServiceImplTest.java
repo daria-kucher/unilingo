@@ -26,9 +26,6 @@ class ProgressServiceImplTest {
     @Mock
     private UserSubSkillRepository userSubSkillRepository;
 
-    @Mock
-    private SkillService skillService;
-
     @InjectMocks
     private ProgressServiceImpl progressService;
 
@@ -51,9 +48,6 @@ class ProgressServiceImplTest {
 
         when(userSubSkillRepository.findByUser(user))
                 .thenReturn(List.of(us1, us2));
-
-        when(skillService.getUserSkillProgress(1L))
-                .thenReturn(List.of());
 
         ProgressDTO result = progressService.getUserProgress(1L);
 

@@ -35,7 +35,6 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public CourseDTO updateCourse(Long id, CourseDTO request) {
         var course = courseRepository.findCourseById(id).orElseThrow(CourseNotFoundException::new);
-        System.out.println(course);
 
         courseMapper.update(request, course);
         courseRepository.save(course);

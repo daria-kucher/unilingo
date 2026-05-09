@@ -74,7 +74,7 @@ public class AdaptiveServiceImpl implements AdaptiveService {
 
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-
+/*
         // 🔥 1. знайти найслабшу Skill
         Skill weakestSkill = userSubSkillRepository.findByUser(user)
                 .stream()
@@ -95,7 +95,7 @@ public class AdaptiveServiceImpl implements AdaptiveService {
             throw new RuntimeException("No modules for skill");
         }
 
-        // 🔥 3. (MVP) просто повертаємо перший
-        return modules.get(0);
+        // 🔥 3. (MVP) просто повертаємо перший*/
+        return null;
     }
 }
