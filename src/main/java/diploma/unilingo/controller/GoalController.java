@@ -1,7 +1,6 @@
 package diploma.unilingo.controller;
 
 import diploma.unilingo.dto.GoalDTO;
-import diploma.unilingo.entity.Goal;
 import diploma.unilingo.service.GoalService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

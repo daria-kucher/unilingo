@@ -1,6 +1,5 @@
 package diploma.unilingo.dto;
 
-
 import java.util.List;
 
 public class ExerciseResponseDTO {
