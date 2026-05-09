@@ -2,13 +2,9 @@ package diploma.unilingo.service.impl;
 
 import diploma.unilingo.dto.GoalDTO;
 import diploma.unilingo.entity.Goal;
-import diploma.unilingo.entity.User;
-import diploma.unilingo.entity.UserSubSkill;
 import diploma.unilingo.exception.goal.GoalNotFoundException;
 import diploma.unilingo.mapper.GoalMapper;
 import diploma.unilingo.repository.GoalRepository;
-import diploma.unilingo.repository.UserRepository;
-import diploma.unilingo.repository.UserSubSkillRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;

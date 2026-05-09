@@ -1,18 +1,11 @@
 package diploma.unilingo.service.impl;
 
 import diploma.unilingo.dto.GoalDTO;
-import diploma.unilingo.entity.Goal;
-import diploma.unilingo.entity.User;
-import diploma.unilingo.entity.UserSubSkill;
 import diploma.unilingo.exception.goal.GoalNotFoundException;
 import diploma.unilingo.mapper.GoalMapper;
 import diploma.unilingo.repository.GoalRepository;
-import diploma.unilingo.repository.UserRepository;
-import diploma.unilingo.repository.UserSubSkillRepository;
 import diploma.unilingo.service.GoalService;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class GoalServiceImpl implements GoalService {
