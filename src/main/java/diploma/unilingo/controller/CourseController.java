@@ -1,10 +1,7 @@
 package diploma.unilingo.controller;
 
 import diploma.unilingo.dto.CourseDTO;
-import diploma.unilingo.entity.Course;
-import diploma.unilingo.repository.CourseRepository;
 import diploma.unilingo.service.impl.CourseServiceImpl;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
