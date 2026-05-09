@@ -1,7 +1,6 @@
 package diploma.unilingo.service;
 
 import diploma.unilingo.dto.CourseDTO;
-import diploma.unilingo.entity.Course;
 
 import java.util.List;
 
