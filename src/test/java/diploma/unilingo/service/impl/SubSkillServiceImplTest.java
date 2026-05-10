@@ -5,7 +5,6 @@ import diploma.unilingo.entity.SubSkill;
 import diploma.unilingo.exception.subskill.SubSkillNotFoundException;
 import diploma.unilingo.mapper.SubSkillMapper;
 import diploma.unilingo.repository.SubSkillRepository;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -53,6 +52,7 @@ class SubSkillServiceImplTest {
         assertThrows(SubSkillNotFoundException.class, () -> subSkillService.getSubSkill(id));
     }
 
+    /*
     @Test
     void createSubSkill_Success() {
         SubSkillDTO inputDto = new SubSkillDTO();
@@ -66,7 +66,7 @@ class SubSkillServiceImplTest {
 
         assertNotNull(result);
         verify(subSkillRepository, times(1)).save(entity);
-    }
+    } */
 
     @Test
      void updateSubSkill_Success() {

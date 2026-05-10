@@ -13,5 +13,5 @@ public interface SubSkillProfileMapper {
     SubSkillProfile toEntity(SubSkillProfileDTO dto);
 
     @Mapping(target = "id", ignore = true)
-    void update(Long id, @MappingTarget SubSkillProfile profile);
+    void update(SubSkillProfileDTO request, @MappingTarget SubSkillProfile profile);
 }
