@@ -1,16 +1,13 @@
 package diploma.unilingo.entity;
 
 
-import diploma.unilingo.entity.enums.Skill;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Table(name = "sub_skill_profile")
@@ -22,60 +19,34 @@ public class SubSkillProfile {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "conversation_management_id")
     private SubSkill conversationManagement;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "functional_language_use_id")
     private SubSkill functionalLanguageUse;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sentence_structure_id")
     private SubSkill sentenceStructure;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tense_and_agreement_id")
     private SubSkill tenseAndAgreement;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "word_meaning_and_usage_id")
     private SubSkill wordMeaningAndUsage;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "topic_specific_vocabulary_id")
     private SubSkill topicSpecificVocabulary;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "organization_and_coherence_id")
     private SubSkill organizationAndCoherence;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "spelling_and_punctuation_id")
     private SubSkill spellingAndPunctuation;
-
-    public SubSkillProfile() {
-        conversationManagement =
-                new SubSkill(null, "Conversation Management", 0,
-                        Skill.COMMUNICATIVE_PRAGMATICS);
-
-        functionalLanguageUse =
-                new SubSkill(null, "Functional Language Use", 0,
-                        Skill.COMMUNICATIVE_PRAGMATICS);
-
-        sentenceStructure =
-                new SubSkill(null, "Sentence Structure", 0,
-                        Skill.GRAMMAR);
-
-        tenseAndAgreement =
-                new SubSkill(null, "Tense and Agreement", 0,
-                        Skill.GRAMMAR);
-
-        wordMeaningAndUsage =
-                new SubSkill(null, "Word Meaning and Usage", 0,
-                        Skill.VOCABULARY);
-
-        topicSpecificVocabulary =
-                new SubSkill(null, "Topic-Specific Vocabulary", 0,
-                        Skill.VOCABULARY);
-
-        organizationAndCoherence =
-                new SubSkill(null, "Organization and Coherence", 0,
-                        Skill.WRITING);
-
-        spellingAndPunctuation =
-                new SubSkill(null, "Spelling and Punctuation", 0,
-                        Skill.WRITING);
-    }
 }

@@ -13,7 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "sub_skill", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
+@Table(name = "sub_skill")
 public class SubSkill {
 
     @Id
