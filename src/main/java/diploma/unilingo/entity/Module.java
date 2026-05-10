@@ -38,6 +38,10 @@ public class Module {
     @Column(name = "completed")
     private boolean completed;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "test_id")
+    private Test test;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "module_id")
     private List<SubModule> subModules;
