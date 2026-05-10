@@ -1,72 +1,43 @@
 package diploma.unilingo.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name = "attempt")
 public class Attempt {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
+    @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 
-    private boolean correct;
+    @ManyToOne
+    @JoinColumn(name = "answer_id")
+    private Answer answer;
 
-    private double timeSpent;
+    @Builder.Default
+    @Column(name = "correct")
+    private boolean correct = false;
 
-    private LocalDateTime timestamp;
+    @Column(name = "start_time")
+    private LocalDateTime start;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Exercise getExercise() {
-        return exercise;
-    }
-
-    public void setExercise(Exercise exercise) {
-        this.exercise = exercise;
-    }
-
-    public boolean isCorrect() {
-        return correct;
-    }
-
-    public void setCorrect(boolean correct) {
-        this.correct = correct;
-    }
-
-    public double getTimeSpent() {
-        return timeSpent;
-    }
-
-    public void setTimeSpent(double timeSpent) {
-        this.timeSpent = timeSpent;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
+    @Column(name = "finish_time")
+    private LocalDateTime finish;
 }
