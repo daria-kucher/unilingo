@@ -1,14 +1,10 @@
 package diploma.unilingo.service;
 
 import diploma.unilingo.dto.ExerciseDTO;
-import diploma.unilingo.entity.Exercise;
-
-import java.util.List;
 
 public interface ExerciseService {
-    Exercise createExercise(ExerciseDTO dto);
-
-    ExerciseResponseDTO getExercise(Long id);
-
-    List<Exercise> getExercisesBySubSkill(Long subSkillId);
+    ExerciseDTO getExercise(Long id);
+    ExerciseDTO createExercise(ExerciseDTO dto);
+    ExerciseDTO updateExercise(Long id, ExerciseDTO request);
+    void delete(Long id);
 }
