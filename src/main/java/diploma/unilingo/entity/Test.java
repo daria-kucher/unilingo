@@ -2,51 +2,30 @@ package diploma.unilingo.entity;
 
 import diploma.unilingo.entity.enums.TestType;
 import jakarta.persistence.*;
+import lombok.*;
 
+import java.util.List;
+
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name = "test")
 public class Test {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
+    @NonNull
     @Enumerated(EnumType.STRING)
+    @Column(name = "type")
     private TestType type;
 
-    @ManyToOne
-    private Module module;
-
-    @ManyToOne
-    private SubModule subModule;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public TestType getType() {
-        return type;
-    }
-
-    public void setType(TestType type) {
-        this.type = type;
-    }
-
-    public Module getModule() {
-        return module;
-    }
-
-    public void setModule(Module module) {
-        this.module = module;
-    }
-
-    public SubModule getSubModule() {
-        return subModule;
-    }
-
-    public void setSubModule(SubModule subModule) {
-        this.subModule = subModule;
-    }
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "test_id")
+    private List<Exercise> exercises;
 }
