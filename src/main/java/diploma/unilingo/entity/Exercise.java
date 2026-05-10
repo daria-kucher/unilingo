@@ -25,8 +25,7 @@ public class Exercise {
     @Column(name = "question", columnDefinition = "TEXT")
     private String question;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "exercise_id")
+    @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL)
     private List<Answer> answers;
 
     @OneToOne(cascade = CascadeType.ALL)

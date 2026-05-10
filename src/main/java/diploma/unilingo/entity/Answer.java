@@ -25,4 +25,8 @@ public class Answer {
 
     @Column(name = "is_correct")
     private boolean correct;
+
+    @ManyToOne
+    @JoinColumn(name = "exercise_id")
+    private Exercise exercise;
 }
