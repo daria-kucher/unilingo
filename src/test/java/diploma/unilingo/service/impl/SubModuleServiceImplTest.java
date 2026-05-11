@@ -41,8 +41,6 @@ class SubModuleServiceImplTest {
         dto = new SubModuleDTO();
     }
 
-    // --- GET TESTS ---
-
     @Test
     void getSubModule_ShouldReturnDto_WhenIdExists() {
         when(subModuleRepository.findById(subModuleId)).thenReturn(Optional.of(entity));
@@ -61,7 +59,6 @@ class SubModuleServiceImplTest {
         assertThrows(SubModuleNotFoundException.class, () -> subModuleService.getSubModule(subModuleId));
     }
 
-    // --- LIST TESTS ---
 
     @Test
     void getSubModulesByModuleId_ShouldReturnList() {
@@ -76,7 +73,6 @@ class SubModuleServiceImplTest {
         verify(subModuleMapper, times(2)).toDto(any(SubModule.class));
     }
 
-    // --- CREATE TESTS ---
 
     @Test
     void createSubModule_ShouldSaveAndReturnDto() {
@@ -90,7 +86,6 @@ class SubModuleServiceImplTest {
         assertNotNull(result);
     }
 
-    // --- UPDATE TESTS ---
 
     @Test
     void updateSubModule_ShouldUpdateAndSave_WhenIdExists() {
@@ -104,7 +99,6 @@ class SubModuleServiceImplTest {
         assertNotNull(result);
     }
 
-    // --- DELETE TESTS ---
 
     @Test
     void delete_ShouldCallDelete_WhenIdExists() {
