@@ -42,7 +42,6 @@ class ModuleServiceImplTest {
         dto = new ModuleDTO();
     }
 
-    // --- GET TESTS ---
 
     @Test
     void getModule_ShouldReturnDto_WhenIdExists() {
@@ -62,7 +61,6 @@ class ModuleServiceImplTest {
         assertThrows(ModuleNotFoundException.class, () -> moduleService.getModule(moduleId));
     }
 
-    // --- LIST TESTS ---
 
     @Test
     void getAllModulesByCourse_ShouldReturnList() {
@@ -76,7 +74,6 @@ class ModuleServiceImplTest {
         verify(moduleRepository).findAllByCourseId(courseId);
     }
 
-    // --- CREATE TESTS ---
 
     @Test
     void createModule_ShouldSaveAndReturnDto() {
@@ -90,7 +87,6 @@ class ModuleServiceImplTest {
         assertNotNull(result);
     }
 
-    // --- UPDATE TESTS ---
 
     @Test
     void updateModule_ShouldUpdateAndSave_WhenIdExists() {
@@ -104,7 +100,6 @@ class ModuleServiceImplTest {
         assertNotNull(result);
     }
 
-    // --- DELETE TESTS ---
 
     @Test
     void deleteModule_ShouldCallDelete_WhenIdExists() {

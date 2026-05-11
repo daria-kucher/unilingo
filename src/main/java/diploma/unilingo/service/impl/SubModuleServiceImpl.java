@@ -1,52 +1,62 @@
 package diploma.unilingo.service.impl;
 
-import diploma.unilingo.entity.Module;
-import diploma.unilingo.entity.SubModule;
-import diploma.unilingo.repository.ModuleRepository;
+import diploma.unilingo.dto.SubModuleDTO;
+import diploma.unilingo.exception.submodule.SubModuleNotFoundException;
+import diploma.unilingo.mapper.SubModuleMapper;
 import diploma.unilingo.repository.SubModuleRepository;
 import diploma.unilingo.service.SubModuleService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
 public class SubModuleServiceImpl implements SubModuleService {
     private final SubModuleRepository subModuleRepository;
-    private final ModuleRepository moduleRepository;
+    private final SubModuleMapper subModuleMapper;
 
-    public SubModuleServiceImpl(SubModuleRepository subModuleRepository,
-                                ModuleRepository moduleRepository) {
+    public SubModuleServiceImpl(SubModuleRepository subModuleRepository, SubModuleMapper subModuleMapper) {
         this.subModuleRepository = subModuleRepository;
-        this.moduleRepository = moduleRepository;
+        this.subModuleMapper = subModuleMapper;
     }
 
-    // ================= CREATE =================
 
     @Override
-    public SubModule createSubModule(SubModule subModule) {
-        return subModuleRepository.save(subModule);
+    public SubModuleDTO getSubModule(Long id) {
+        var subModule = subModuleRepository.findById(id).orElseThrow(SubModuleNotFoundException::new);
+
+        return subModuleMapper.toDto(subModule);
     }
 
-    // ================= GET ONE =================
-
     @Override
-    @Transactional(readOnly = true)
-    public SubModule getSubModule(Long id) {
-        return subModuleRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("SubModule not found"));
+    public List<SubModuleDTO> getSubModulesByModuleId(Long moduleId) {
+        return subModuleRepository.findAllByModuleId(moduleId)
+                .stream()
+                .map(subModuleMapper::toDto)
+                .toList();
     }
 
-    // ================= BY MODULE =================
+    @Override
+    public SubModuleDTO createSubModule(SubModuleDTO dto) {
+        var subModule = subModuleMapper.toEntity(dto);
+        subModuleRepository.save(subModule);
+
+        return subModuleMapper.toDto(subModule);
+    }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<SubModule> getSubModulesByModule(Long moduleId) {
+    public SubModuleDTO updateSubModule(Long id, SubModuleDTO request) {
+        var subModule = subModuleRepository.findById(id).orElseThrow(SubModuleNotFoundException::new);
 
-        Module module = moduleRepository.findById(moduleId)
-                .orElseThrow(() -> new RuntimeException("Module not found"));
+        subModuleMapper.update(request, subModule);
+        subModuleRepository.save(subModule);
 
-        return subModuleRepository.findByModule(module);
+        return subModuleMapper.toDto(subModule);
+    }
+
+    @Override
+    public void delete(Long id) {
+        var subModule = subModuleRepository.findById(id).orElseThrow(SubModuleNotFoundException::new);
+
+        subModuleRepository.delete(subModule);
     }
 }
