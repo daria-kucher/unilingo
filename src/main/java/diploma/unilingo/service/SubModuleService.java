@@ -1,13 +1,13 @@
 package diploma.unilingo.service;
 
-import diploma.unilingo.entity.SubModule;
+import diploma.unilingo.dto.SubModuleDTO;
 
 import java.util.List;
 
 public interface SubModuleService {
-    SubModule createSubModule(SubModule subModule);
-
-    SubModule getSubModule(Long id);
-
-    List<SubModule> getSubModulesByModule(Long moduleId);
+    SubModuleDTO getSubModule(Long id);
+    List<SubModuleDTO> getSubModulesByModuleId(Long moduleId);
+    SubModuleDTO createSubModule(SubModuleDTO dto);
+    SubModuleDTO updateSubModule(Long id, SubModuleDTO request);
+    void delete(Long id);
 }
