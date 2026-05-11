@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class LanguageLevelDTO {
-    Long id;
-    String name;
-    int threshold;
+    private Long id;
+    private String name;
+    private int threshold;
 }
