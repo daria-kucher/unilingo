@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 public class SubSkillDTO {
-    Long id;
-    String name;
-    int points;
-    Skill skill;
+    private Long id;
+    private String name;
+    private int points;
+    private Skill skill;
 }

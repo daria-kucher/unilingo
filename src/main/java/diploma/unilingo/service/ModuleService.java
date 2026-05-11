@@ -1,15 +1,13 @@
 package diploma.unilingo.service;
 
-import diploma.unilingo.entity.Module;
+import diploma.unilingo.dto.ModuleDTO;
 
 import java.util.List;
 
 public interface ModuleService {
-    diploma.unilingo.entity.Module createModule(diploma.unilingo.entity.Module module);
-
-    diploma.unilingo.entity.Module getModule(Long id);
-
-    List<Module> getModulesByCourse(Long courseId);
-
-    boolean isModuleAvailable(Long userId, Long moduleId);
+    ModuleDTO getModule(Long id);
+    List<ModuleDTO> getAllModulesByCourse(Long courseId);
+    ModuleDTO createModule(ModuleDTO dto);
+    ModuleDTO updateModule(Long id, ModuleDTO request);
+    void deleteModule(Long id);
 }
